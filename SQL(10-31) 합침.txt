@@ -1,0 +1,138 @@
+
+-- drop table subtask;
+-- drop table confirm;
+-- drop table notice;
+-- drop table reply;
+-- drop table task;
+-- drop table work;
+-- drop table invite;
+-- drop table project_member;
+-- drop table project;
+-- drop table user;
+-- drop table reasonclose;
+-- drop table invite;
+
+-- rollback;
+-- commit;
+
+CREATE TABLE reasonclose (
+	reasonclose_id SMALLINT(10),
+    reasonclose_reason VARCHAR(100),
+    
+    PRIMARY KEY (reasonclose_id)
+);
+
+CREATE TABLE user (
+  user_id INT NOT NULL AUTO_INCREMENT,
+  user_email VARCHAR(50) NOT NULL,
+  user_pw VARCHAR(65) NOT NULL,
+  user_nickname VARCHAR(50) NOT NULL,
+  user_joindate TIMESTAMP DEFAULT now(),
+  user_isclosed BOOLEAN DEFAULT false,
+  user_reasonclose SMALLINT(10) DEFAULT NULL,
+  user_enddate timestamp ,
+  
+  PRIMARY KEY (user_id),
+  UNIQUE KEY (user_email),
+  FOREIGN KEY (user_reasonclose) REFERENCES reasonclose(reasonclose_id)
+);
+
+CREATE TABLE project (
+	project_id INT NOT NULL AUTO_INCREMENT,
+    project_leader INT NOT NULL,
+    project_name VARCHAR(50),
+    project_description VARCHAR(1000),
+    project_startdate TIMESTAMP DEFAULT now(),
+    project_enddate TIMESTAMP,
+    project_createddate TIMESTAMP DEFAULT now(),
+    project_updateddate TIMESTAMP,
+    
+    PRIMARY KEY (project_id),
+    FOREIGN KEY (project_leader) REFERENCES user(user_id)
+);
+    
+CREATE TABLE work (
+
+	work_user INT,
+    work_project INT,
+	level int(3) check(level in (1,2)),
+      
+    PRIMARY KEY (work_user, work_project),
+    FOREIGN KEY (work_user) REFERENCES user(user_id),
+    FOREIGN KEY (work_project) REFERENCES project(project_id)
+    
+);
+
+CREATE TABLE task (
+	task_id INT AUTO_INCREMENT,
+    task_project INT NOT NULL,
+    task_user INT,
+    task_name VARCHAR(50) NOT NULL,
+    task_description VARCHAR(1000) NOT NULL,
+    task_startdate TIMESTAMP DEFAULT now(),
+    task_enddate TIMESTAMP,
+    task_createddate TIMESTAMP DEFAULT now(),
+    task_updateddate TIMESTAMP,
+    task_isdone BOOLEAN DEFAULT false,
+    task_percomplete FLOAT(2, 2) DEFAULT 0,
+    task_importance SMALLINT(3) NOT NULL,
+    
+    PRIMARY KEY (task_id),
+    FOREIGN KEY (task_project) REFERENCES project(project_id),
+    FOREIGN KEY (task_user) REFERENCES user(user_id)
+);
+
+CREATE TABLE subtask (
+    subtask_id INT NOT NULL AUTO_INCREMENT,
+    subtask_task INT NOT NULL,
+    subtask_name varchar(50),
+    subtask_description varchar(200),
+    subtask_filepath VARCHAR(100),
+    subtask_ischecked BOOLEAN DEFAULT false,
+
+    PRIMARY KEY (subtask_id),
+    FOREIGN KEY (subtask_task) REFERENCES task(task_id)
+);
+
+CREATE TABLE reply(
+   reply_id INT NOT NULL AUTO_INCREMENT,
+    reply_task INT NOT NULL,
+    reply_user INT NOT NULL,
+    reply_text VARCHAR(1000),
+   created_at TIMESTAMP DEFAULT now(),
+   updated_at TIMESTAMP,
+
+    PRIMARY KEY (reply_id),
+    FOREIGN KEY (reply_task) REFERENCES task(task_id),
+    FOREIGN KEY (reply_user) REFERENCES user(user_id)
+);
+
+CREATE TABLE notice (
+	notice_id INT NOT NULL AUTO_INCREMENT,
+    notice_project INT NOT NULL,
+    notice_text VARCHAR(1000),
+    
+    PRIMARY KEY (notice_id)
+);
+
+create table confirm (
+
+	confirm_task INT,
+    confirm_user INT,
+    isChecked BOOLEAN,
+    
+    FOREIGN KEY (confirm_task) REFERENCES task(task_id),
+    FOREIGN KEY (confirm_user) REFERENCES user(user_id),
+    PRIMARY KEY (confirm_task, confirm_user)
+);
+
+create table invite (
+	user_id int(11) not null ,
+	project_id int(11) not null,	
+    project_invite tinyint(1) default 0 not null ,
+    
+    foreign key(project_id) references project(project_id),
+    foreign key(user_id) references user(user_id)
+);
+
+commit;
