@@ -1,0 +1,747 @@
+:root {
+  --primary-color: #f9d423;
+  --dark-color: #333;
+  --white-color: #f3f3f3;
+  --gray-color: rgb(209, 202, 202);
+  --max-width: 75rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  background-color: #eee;
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark-color);
+}
+
+.text-primary {
+  /* color: #a8dba8; */
+  /* color: #f17f42; */
+  color: var(--primary-color);
+
+  /* color: #ffeee4; */
+}
+
+l-heading {
+  font-size: 4rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.1;
+}
+
+.logo {
+  font-family: "Shrikhand", cursive;
+  color: #fff;
+}
+
+.logo-link:visited {
+  text-decoration: none;
+  color: #fff;
+}
+
+.form-logo {
+  font-family: "Shrikhand", cursive;
+  color: #333;
+}
+.search {
+  width: 300px;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: absolute;
+  left: 12rem;
+  top: 0.5rem;
+}
+
+.search input#search {
+  width: 300px;
+  height: 50px;
+  background: var(--white-color);
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #333;
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.search .icon {
+  position: absolute;
+  top: 0px;
+  margin-top: 12px;
+  margin-left: 12px;
+  z-index: 1;
+  color: var(--dark-color);
+}
+#user-circle {
+  font-size: 60px;
+  line-height: 0.55;
+  height: 0px;
+  margin-right:30px;
+}
+#navbar {
+  display: flex;
+  position: sticky;
+  top: 0;
+  /* background: #ffeee4; */
+  background: var(--dark-color);
+  color: var(--dark-color);
+  color: var(--white-color);
+  justify-content: space-between;
+  z-index: 1;
+  padding: 1rem;
+  opacity: 0.99;
+}
+
+#navbar>ul {
+  display: flex;
+  align-content: center;
+  list-style: none;
+  padding: 0.25rem;
+}
+
+#navbar ul li a {
+  /* color: #333; */
+  color: var(--white-color);
+  padding: 0.75rem;
+  margin: 0 0.25rem;
+}
+
+#navbar ul li a:hover {
+  /*background: #f17f42;
+    */
+  background: var(--primary-color);
+  color: var(--dark-color);
+  padding: 0.75rem;
+  margin: 0 0.25rem;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+#navbar #user-circle {
+  font-size: 2.5rem;
+  margin-top: 0.5rem;
+}
+
+/* task */
+#task {
+  margin: 3rem auto;
+  height: auto;
+  max-width: var(--max-width);
+  border-radius: 10px;
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.3);
+  background: #fff;
+  /* padding: 5rem; */
+}
+
+.task-wrapper {
+  padding: 2rem 5rem;
+}
+
+.task-deadline-warn {
+  height: 40px;
+  width: 100%;
+
+  background-image: linear-gradient(to right bottom, #ed213a, #93291e);
+  /*background-image: linear-gradient(to right bottom, #ed213a, #93291e);
+    */
+  display: block;
+  clip-path: polygon(30% 0%, 70% 0%, 60% 70%, 40% 70%);
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+}
+
+.task-deadline-common {
+  height: 40px;
+  width: 100%;
+  background-image: linear-gradient(to right bottom, #2998ff, #5643fa);
+  /*background-image: linear-gradient(to right bottom, #ed213a, #93291e);
+    */
+  display: block;
+  clip-path: polygon(30% 0%, 70% 0%, 60% 70%, 40% 70%);
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+}
+
+.task-deadline-relax {
+  height: 40px;
+  width: 100%;
+  border-radius: 3px;
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+  display: block;
+  clip-path: polygon(30% 0%, 70% 0%, 60% 70%, 40% 70%);
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+}
+.clear {
+  clear: both;
+}
+
+.bottom-line {
+  height: 4px;
+  width: 8rem;
+  background: var(--primary-color);
+  display: block;
+  margin: 0 auto;
+}
+.task-top {
+  padding-left: 0.5rem;
+  margin-bottom: 4rem;
+}
+.task-top-title {
+  margin: 0.5rem;
+  height: 3rem;
+  text-align: center;
+}
+.task-top-description {
+  padding-left: 1rem;
+  line-height: 1rem;
+  margin: 2rem;
+  text-align: center;
+}
+.task-mid {
+  margin: 0 auto;
+  width: 100%;
+  height: 300px;
+  overflow: auto;
+  padding-left: 2rem;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.subtask-mid-business {
+  
+  margin-bottom: 1rem;
+
+}
+.subtask-mid-business h2{
+  display: inline;
+  margin-right: 1rem;
+}
+.task-reply-content {
+  padding-top: 3rem;
+  height: auto;
+  padding: 2rem 6rem;
+}
+
+.feedback-append {
+	margin-left: 3rem;
+    /* width: 65%; */
+    /* margin-top: 1rem; */
+    /* cursor: auto; */
+    cursor: pointer;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    
+}
+
+.task-upload {
+  width: 5rem;
+  height: 2rem;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  background: var(--primary-color);
+  float: right;
+}
+.task-download {
+  width: 5rem;
+  height: 2rem;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  float: right;
+}
+
+.task-checked {
+  padding: 0 2rem;
+}
+
+.check-and-feedback {
+  padding: 0 2rem;
+}
+
+.button-checked {
+  font-size: 1.7rem;
+  color: var(--primary-color);
+}
+
+.checked {
+  color: var(--primary-color);
+}
+.unchecked {
+  color: gray;
+}
+
+.task-reply-title {
+  text-align: center;
+}
+
+.reply-content-usernickname {
+	float: left;
+}
+
+.reply-content-edit-button {
+	float:left;
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+	margin-top: 3px;
+}
+
+.reply-content-delete-button {
+	flaot: left;
+}
+
+.update-subtask_button {
+	/* float:left; */
+	margin-right: 0.5rem;
+	margin-top: 3px;
+	background-color: white;
+	border: none;
+	font-size: 1rem;
+}
+
+.delete-subtask_button,
+.subtask-download  {
+	/* flaot: left; */
+	background: white;
+	border: none;
+	font-size: 1rem;
+}
+.reply-content-write-date {
+	float:right;
+}
+
+.reply-content-bottom {
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+.task-reply {
+  padding: 1rem 2rem;
+
+  /* text-align: center; */
+}
+.task-reply-write {
+  float: left;
+  width: 30rem;
+  height: 2rem;
+  border-top: #fff;
+  border-right: #fff;
+  border-left: #fff;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  margin-right: 1rem;
+  /* margin-left: 7rem; */
+}
+
+.task-reply-submit {
+  width: 5rem;
+  float: left;
+  height: 2rem;
+  /* color: var(--gray-color); */
+  /* background-color: var(--dark-color); */
+  border-radius: 5px;
+}
+
+.task-reply-uncheck {
+  width: 4rem;
+  float: left;
+  height: 2rem;
+  background-color: var(--primary-color);
+  /* color: var(--white-color); */
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
+  
+}
+
+.task-reply-check {
+  width: 4.5rem;
+  float: left;
+  height: 2rem;
+  
+  /* color: var(--white-color); */
+  border-radius: 5px;
+  /* border-color: var(--dark-color); */
+  
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
+}
+
+
+
+.input-update-reply {
+	display: none;
+}
+
+.task-reply-update {
+  width: 30rem;
+  height: 2rem;
+  border-top: #fff;
+  border-right: #fff;
+  border-left: #fff;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  margin-right: 1rem;
+  /* margin-left: 7rem; */
+}
+
+.task-reply-update-submit {
+	width: 5rem;
+  	height: 2rem;
+  	/* color: var(--gray-color); */
+  	/* background-color: var(--dark-color); */
+ 	border-radius: 5px;
+}
+
+
+
+.middle-line {
+  height: 0.9px;
+  width: 85%;
+  background: var(--dark-color);
+  display: block;
+  margin: 0 auto;
+  opacity: 0.2;
+}
+
+
+
+/* .task-bottom {
+  margin-left: 2rem;
+  width: 65%;
+  margin-top: 1rem;
+  
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+} */
+
+
+
+
+.task-bottom-reply {
+	margin-left: 2rem;
+  width: 65%;
+  margin-top: 1rem;
+  
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+
+
+/* button {
+  background-color: rgb(92, 94, 92);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0.5rem;
+  cursor: pointer;
+  width: 8rem;
+  border-radius: 10px;
+} */
+
+ /*set styles for the cancel button*/
+  .subtask_cancelbtn,
+  .subtask_signupbtn {
+    padding: 14px 0px;
+    background-color: rgb(202, 202, 202);
+    width: 4rem;
+  }
+  
+  /*float cancel and signup buttons and add an equal width*/
+  .subtask_signupbtn {
+    background-color: var(--primary-color);
+  }
+  
+  /*add padding to container elements*/
+  .subtask_body {
+    padding: 16px;
+  }
+  .subtask_body p {
+    margin: 0;
+  }
+  /*define the modal�셲 background*/
+  
+  .subtask_modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+    border-radius: 3px;
+  }
+  
+  /*define the modal-content background*/
+  
+  .subtask_modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 5% auto 15% auto;
+    border: 1px solid #888;
+    width: 24rem;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+  
+  /*define the close button*/
+  
+  .subtask_close {
+    position: absolute;
+    top: 0px;
+    right: 14px;
+    color: #000;
+    font-size: 40px;
+    font-weight: bold;
+  }
+  
+  /*define the close hover and focus effects*/
+  
+  .subtask_close:hover,
+  .subtask_close:focus {
+    color: red;
+    cursor: pointer;
+  }
+  
+  .subtask_clearfix {
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .subtask_clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  @media screen and (max-width: 30rem) {
+    .subtask_cancelbtn,
+    .subtask_signupbtn {
+      width: 20rem;
+    }
+  }
+  .subtask_title {
+    margin: auto;
+    padding-top: 2rem;
+    font-size: 2rem;
+    text-align: center;
+  }
+   .subtask_button #enroll {
+    font-size: 2rem;
+    font-weight: lighter;
+    text-align: center;
+    background: var(--primary-color);
+    border-radius: 80px;
+    -webkit-border-radius: 80px;
+    -moz-border-radius: 80px;
+    -ms-border-radius: 80px;
+    -o-border-radius: 80px;
+    color: white;
+    margin-bottom: 0.8rem;
+  }
+  .add-subtask_button {
+    width: 15rem;
+    height: 3rem;
+    margin: auto;
+    background: var(--primary-color);
+    color: black;
+    border: 0;
+    font-size:0.5rem;
+  	border-radius:5px;
+  	border : 1px solid var(--dark-color);
+  }
+  /*set styles for the cancel button*/
+/* .upload-subtask_cancelbtn {
+  padding: 14px 20px;
+  background-color: rgb(202, 202, 202);
+}
+float cancel and signup buttons and add an equal width
+.upload-subtask_cancelbtn,
+.upload-subtask_signupbtn {
+  width: 6rem;
+}
+add padding to container elements
+.upload-subtask_body {
+  padding: 16px;
+}
+.upload-subtask_body p {
+  margin: 0;
+}
+define the modal�셲 background
+.upload-subtask_modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 60px;
+  border-radius: 3px;
+}
+define the modal-content background
+.upload-subtask_modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: 5% auto 15% auto;
+  border: 1px solid #888;
+  width: 24rem;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+define the close button
+.upload-subtask_close {
+  position: absolute;
+  top: 0px;
+  right: 14px;
+  color: #000;
+  font-size: 40px;
+  font-weight: bold;
+}
+define the close hover and focus effects
+.upload-subtask_close:hover,
+.upload-subtask_close:focus {
+  color: red;
+  cursor: pointer;
+}
+.upload-subtask_clearfix {
+  margin: 0 auto;
+  text-align: center;
+}
+.upload-subtask_clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+@media screen and (max-width: 30rem) {
+  .upload-subtask_cancelbtn,
+  .upload-subtask_signupbtn {
+    width: 10rem;
+  }
+}
+.upload-subtask_title {
+  margin: auto;
+  padding-top: 2rem;
+  font-size: 2rem;
+  text-align: center;
+}
+ .upload-subtask_button #enroll {
+  font-size: 2rem;
+  font-weight: lighter;
+  text-align: center;
+  background-color: var(--primary-color);
+  border-radius: 80px;
+  -webkit-border-radius: 80px;
+  -moz-border-radius: 80px;
+  -ms-border-radius: 80px;
+  -o-border-radius: 80px;
+  color: white;
+  margin-bottom: 0.8rem;
+} */
+.upload-subtask_button {
+  width: 5rem;
+  height: 2rem;
+  margin: auto;
+  background-color: var(--primary-color);
+  color: black;
+  border: 0;
+  font-size:0.5rem;
+    border-radius:5px;
+    float:right;
+  border : 1px solid var(--dark-color);
+} 
+
+.filesubmit{
+    margin: auto;
+    color: black;
+    border: 0;
+    font-size:1rem;
+     border : 1px solid var(--dark-color);
+     background-color: var(--primary-color);
+    border-radius: 4px;
+    width: 4rem;
+    height: 1.5rem;
+}
+
+#delform,
+#upload,
+#download {
+   display:inline-block;
+}
+.filesubmit{
+    margin: auto;
+    color: black;
+    border: 0;
+    font-size:1rem;
+     border : 1px solid var(--dark-color);
+     background-color: var(--primary-color);
+    border-radius: 4px;
+    width: 4rem;
+    height: 1.5rem;
+}
+
+.fileUpload{
+   display: inline-flex;
+}
+
+#delform {
+	display:inline-block;
+}

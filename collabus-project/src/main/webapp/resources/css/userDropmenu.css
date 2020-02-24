@@ -1,0 +1,17 @@
+#user-circle > i{
+	cursor:pointer;
+	list-style:none;
+}
+
+.dropmenu{
+	display:none ; 
+	position:absolute;
+	top:67px;
+	right:0;
+	background:#353535;
+}
+.dropmenu > li {
+	list-style:none;
+	padding:20px;
+	text-align:center
+}
