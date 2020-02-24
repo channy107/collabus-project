@@ -62,7 +62,7 @@ public class MypageController {
       try {
     	  
     	  if(message == null || message =="" || message ==" "){
-    		  message=".";
+    		  message= ".";
     	  }
     	  
          if (mypage.userTaltoe_1(user_id) == 1) {
@@ -103,7 +103,7 @@ public class MypageController {
       try {
          System.out.println("===========================================");
          if (mypage.inviteAccept(user_id, project_id) == 1) {
-            // 0실패1 성공
+            // 0�떎�뙣1 �꽦怨�
             return 1;
          }
 
@@ -127,26 +127,26 @@ public class MypageController {
       return 0;
    }
    /**
-    * 이 건 ajax_ 로 비밀번호를 바꿀수 있는지 확인하는 기능이다 .
+    * �씠 嫄� ajax_ 濡� 鍮꾨�踰덊샇瑜� 諛붽��닔 �엳�뒗吏� �솗�씤�븯�뒗 湲곕뒫�씠�떎 .
     * 
-    * @param user_dto       는 SAH 암호화에 user_dto 객체를 넣어줘야하기 때문에 받아왔다
-    * @param user_pw        이 아래 참고
-    * @param mypage_user_pw - 이미 로그인된 패스워드를 가져온다 이패스워드는 이미 암호화가 이루워진 상태이다 - 현재 비밀번호
-    *                       입력칸에 로그인한 패스워드를 입력한다 이건 로그인한 사용자가 잠시 어디갔다올떄 누군가 패스워드를
-    *                       바꿀까 대비한거다 - 현재 패스워드를 입력해 암호화 시킨다 이 암호화는 값 두개가 필요한대 하나는
-    *                       user_email 또하나는 user_pw 가 있어야 완벽한 - 암호화가 이루어진다.
-    * @param user_email     위에 참고
-    * @param change_pw      는 현재 사용자의 비밀번호를 바꿔준다
-    * @param user_id        는 비밀번호를 바꿔줄떄 사용자를 비번과 또하나의 값을 비교하는데 이떄 비번이 아주 작은 확률이지만
-    *                       같을수가 있어서 또하나의 값이 필요해서 다 - 비번을 바꿀떄 사용되는 건 change_pw 과
-    *                       user_id 이다
-    * @return 0 과 1 과 2 가 있다 -0 은 모든것이 안맞을 때 실행된다 -1 은 비밀번호까지 넣어준다 -2 는 비밀번호가 틀렸을떄
-    *         리턴해준다 -* 만약 혹시라도 update 도 끝나고 값이 2이상 들어올떄 transactionManager.rollback
-    *         을 성정했ㄷ ㅏ
+    * @param user_dto       �뒗 SAH �븫�샇�솕�뿉 user_dto 媛앹껜瑜� �꽔�뼱以섏빞�븯湲� �븣臾몄뿉 諛쏆븘�솕�떎
+    * @param user_pw        �씠 �븘�옒 李멸퀬
+    * @param mypage_user_pw - �씠誘� 濡쒓렇�씤�맂 �뙣�뒪�썙�뱶瑜� 媛��졇�삩�떎 �씠�뙣�뒪�썙�뱶�뒗 �씠誘� �븫�샇�솕媛� �씠猷⑥썙吏� �긽�깭�씠�떎 - �쁽�옱 鍮꾨�踰덊샇
+    *                       �엯�젰移몄뿉 濡쒓렇�씤�븳 �뙣�뒪�썙�뱶瑜� �엯�젰�븳�떎 �씠嫄� 濡쒓렇�씤�븳 �궗�슜�옄媛� �옞�떆 �뼱�뵒媛붾떎�삱�뻹 �늻援곌� �뙣�뒪�썙�뱶瑜�
+    *                       諛붽�源� ��鍮꾪븳嫄곕떎 - �쁽�옱 �뙣�뒪�썙�뱶瑜� �엯�젰�빐 �븫�샇�솕 �떆�궓�떎 �씠 �븫�샇�솕�뒗 媛� �몢媛쒓� �븘�슂�븳�� �븯�굹�뒗
+    *                       user_email �삉�븯�굹�뒗 user_pw 媛� �엳�뼱�빞 �셿踰쏀븳 - �븫�샇�솕媛� �씠猷⑥뼱吏꾨떎.
+    * @param user_email     �쐞�뿉 李멸퀬
+    * @param change_pw      �뒗 �쁽�옱 �궗�슜�옄�쓽 鍮꾨�踰덊샇瑜� 諛붽퓭以��떎
+    * @param user_id        �뒗 鍮꾨�踰덊샇瑜� 諛붽퓭以꾨뻹 �궗�슜�옄瑜� 鍮꾨쾲怨� �삉�븯�굹�쓽 媛믪쓣 鍮꾧탳�븯�뒗�뜲 �씠�뻹 鍮꾨쾲�씠 �븘二� �옉�� �솗瑜좎씠吏�留�
+    *                       媛숈쓣�닔媛� �엳�뼱�꽌 �삉�븯�굹�쓽 媛믪씠 �븘�슂�빐�꽌 �떎 - 鍮꾨쾲�쓣 諛붽��뻹 �궗�슜�릺�뒗 嫄� change_pw 怨�
+    *                       user_id �씠�떎
+    * @return 0 怨� 1 怨� 2 媛� �엳�떎 -0 �� 紐⑤뱺寃껋씠 �븞留욎쓣 �븣 �떎�뻾�맂�떎 -1 �� 鍮꾨�踰덊샇源뚯� �꽔�뼱以��떎 -2 �뒗 鍮꾨�踰덊샇媛� ���졇�쓣�뻹
+    *         由ы꽩�빐以��떎 -* 留뚯빟 �샊�떆�씪�룄 update �룄 �걹�굹怨� 媛믪씠 2�씠�긽 �뱾�뼱�삱�뻹 transactionManager.rollback
+    *         �쓣 �꽦�젙�뻽�꽬 �뀖
     *
-    * @throws NoSuchAlgorithmException update 시 붙는 exctioon 이다
+    * @throws NoSuchAlgorithmException update �떆 遺숇뒗 exctioon �씠�떎
     * @Date 2019-10-27
-    * @Author 강정훈
+    * @Author 媛뺤젙�썕
     */
    @ResponseBody
    @PostMapping(value = "/mypage/password")
@@ -159,10 +159,10 @@ public class MypageController {
          HttpSession session) {
       try {
          /*
-          * userPw 원래 비번 
-          * isPw 입력한 비번
-          * change 바꿀 비번
-          * email 이메일
+          * userPw �썝�옒 鍮꾨쾲 
+          * isPw �엯�젰�븳 鍮꾨쾲
+          * change 諛붽� 鍮꾨쾲
+          * email �씠硫붿씪
           * 
           */
            int user_id = (int) session.getAttribute("user_id");
@@ -179,7 +179,7 @@ public class MypageController {
            
            if(!(isUserPassword.equals(isUserPasswordIs)))
               {
-              System.out.println("비번 틀림 ");
+              System.out.println("鍮꾨쾲 ��由� ");
               return 2;
              }
            
@@ -200,16 +200,16 @@ public class MypageController {
    }
 
          /**
-       * 암호화 기능 이다 매번 두번 호출해주는걸 하나로 해결하기 위해 만들어전거다
+       * �븫�샇�솕 湲곕뒫 �씠�떎 留ㅻ쾲 �몢踰� �샇異쒗빐二쇰뒗嫄� �븯�굹濡� �빐寃고븯湲� �쐞�빐 留뚮뱾�뼱�쟾嫄곕떎
        * 
-       * @param pw  암호화 해줄 비밀번호
-       * @param dto 암호화시 필요한 객체 이다
+       * @param pw  �븫�샇�솕 �빐以� 鍮꾨�踰덊샇
+       * @param dto �븫�샇�솕�떆 �븘�슂�븳 媛앹껜 �씠�떎
        * @throws NoSuchAlgorithmException
        * 
        * @Date 2019-10-26
-       * @Author 강정훈
+       * @Author 媛뺤젙�썕
        */    public static void sha(String pw,UserDTO dto) throws NoSuchAlgorithmException{
-          // 암호화 함수
+          // �븫�샇�솕 �븿�닔
           dto.setUser_pw(pw);
           dto.setUser_pw(SHA.sha256(dto)); 
          }
