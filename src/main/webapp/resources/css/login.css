@@ -1,0 +1,180 @@
+:root {
+  --primary-color: #f9d423;
+  --dark-color: #333;
+  --white-color: #f3f3f3;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  background-color: #eee;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+.text-primary {
+  color: var(--primary-color);
+}
+
+.bg-dark {
+  background: #333;
+  color: #fff;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.py-1 {
+  padding: 1.5rem 0;
+}
+
+.lead {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.l-heading {
+  font-size: 4rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.1;
+}
+
+.m-heading {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.1;
+}
+
+/* Navbar */
+.logo {
+  font-family: "Shrikhand", cursive;
+  color: #fff;
+}
+
+.logo-link:visited {
+  text-decoration: none;
+  color: #fff;
+}
+
+.form-logo {
+  font-family: "Shrikhand", cursive;
+  color: #333;
+}
+
+#navbar {
+  display: flex;
+  position: sticky;
+  top: 0;
+  /* background: #ffeee4; */
+  background: var(--dark-color);
+  color: var(--dark-color);
+  color: var(--white-color);
+  justify-content: space-between;
+  z-index: 1;
+  padding: 1rem;
+  opacity: 0.99;
+}
+
+#navbar ul {
+  display: flex;
+  align-content: center;
+  list-style: none;
+  padding: 0.25rem;
+}
+
+#navbar ul li a {
+  /* color: #333; */
+  color: var(--white-color);
+  padding: 0.75rem;
+  margin: 0 0.25rem;
+}
+
+#navbar ul li a:hover {
+  /* background: #f17f42; */
+  background: var(--primary-color);
+  color: var(--dark-color);
+  padding: 0.75rem;
+  margin: 0 0.25rem;
+  border-radius: 5px;
+}
+
+/* Login  */
+#login-container {
+  margin: 30px auto;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.login-form-wrap {
+  background: #fff;
+  padding: 15px 25px;
+  color: var(--dark-color);
+  border-radius: 5px;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+
+.login-form-wrap h1,
+.login-form-wrap p {
+  text-align: center;
+}
+
+.login-form-wrap .login-form-group {
+  margin-top: 20px;
+}
+
+.login-form-wrap .login-form-group label {
+  display: block;
+  color: #666;
+}
+
+.login-form-wrap .login-form-group input {
+  width: 100%;
+  padding: 10px;
+  border: #ddd 1px solid;
+  border-radius: 5px;
+}
+
+.login-form-wrap button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.login-form-wrap button:hover {
+  background: #ddbc19;
+}
+
+.login-form-wrap .bottom-text {
+  font-size: 13px;
+  margin-top: 20px;
+}
+
+.already-account {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.already-account a {
+  color: var(--primary-color);
+}
+
+footer#main-footer {
+  position: absolute;
+  bottom: 0px;
+  width: 100vw;
+} 
